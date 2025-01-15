@@ -1,0 +1,16 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: welcome-page:${TAG:-latest}
+    container_name: welcome-page
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - web_net
+
+networks:
+  web_net:
+    driver: bridge 

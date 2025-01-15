@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: fastapi-demo:${TAG:-latest}
+    container_name: fastapi-demo
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    networks:
+      - api_net
+
+networks:
+  api_net:
+    driver: bridge 

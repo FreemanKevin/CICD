@@ -26,3 +26,29 @@ logs/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# JS/Node
+JS/dist/
+JS/node_modules/
+**/node_modules/
+**/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env.local
+.env.*.local
+
+# Go
+GO/bin/
+GO/pkg/
+**/go.sum
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+# Test binary, built with 'go test -c'
+*.test
+# Output of the go coverage tool
+*.out
