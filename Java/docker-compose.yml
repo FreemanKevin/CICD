@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        - JAR_FILE=target/swag-ui.jar
+    image: demo-service:${TAG:-latest}
+    container_name: demo-service
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "8080:8080" 
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    driver: bridge
