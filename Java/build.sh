@@ -11,6 +11,7 @@ cd "${SCRIPT_DIR}"
 
 # 编译打包
 echo "Building Java application..."
+mvn clean install -U -DskipTests
 mvn clean package -U -DskipTests
 
 # 构建镜像并运行
